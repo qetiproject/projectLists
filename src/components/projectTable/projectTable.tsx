@@ -26,26 +26,28 @@ const ProjectTable = () => {
 
   const inputHandler = (value: string) => {
     setInput(value) ;
-    const filteredProject = projects.filter((row) => {
-      return row.title.toLowerCase() === value.toLowerCase()
-    });
-    setDataProject(filteredProject);
+    
+    if(!value.length) {
+      setDataProject(projects);
+    } else {
+      const filteredProject = projects.filter((row) => {
+        return row.title.toLowerCase() === value.toLowerCase()
+      });
+      setDataProject(filteredProject);
+    }
  }
-
-  const cancelSearch = () => {
-    inputHandler('');
-    setDataProject(projects);
-  };
 
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-       <TextField 
-          type = "search"
-          value={input}
-          onChange={(e) => inputHandler(e.target.value)}
-        />
-        {/* <Button variant="contained"  onClick={() => requestSearch(input)}>Search</Button>
-        <Button variant="contained"  onClick={() => cancelSearch()}>Clear</Button> */}
+       <div className='search'>
+        <TextField 
+            type = "search"
+            value={input}
+            placeholder='search'
+            onChange={(e) => inputHandler(e.target.value)}
+          />
+          <Button variant="contained">Create Project</Button>
+        </div>
       <TableContainer>
           <Table >
             <TableHead>

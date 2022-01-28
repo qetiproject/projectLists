@@ -3,3 +3,8 @@
 svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiTablePagination-selectIcon.MuiSelect-icon.MuiSelect-iconStandard.css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon {
   display: none;
 }
+
+.search {
+  display: flex;
+  justify-content: space-between;
+}

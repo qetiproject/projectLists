@@ -1,9 +1,12 @@
-import ProjectTable from './components/projectTable/projectTable';
-
+// import Sidebar from './components/sidebar/sidebar';
+import { ProjectTable } from './components/index'
 
 const App = () => {
   return(
-    <ProjectTable />
+    <>
+      {/* <Sidebar /> */}
+      <ProjectTable />
+    </>
   )
 }
 
